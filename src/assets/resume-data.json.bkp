@@ -1,0 +1,336 @@
+{
+  "applicant": {
+    "name": {
+      "first": "Philip",
+      "last": "Snyder"
+    },
+    "address": {
+      "street1": "1116 Mockingbird Rd",
+      "street2": "#1794",
+      "city": "Wrightwood",
+      "state": "CA",
+      "postalCode": "92397"
+    },
+    "contactInfo": {
+      "phone": "714-499-2405",
+      "email": "prs.senior@gmail.com",
+      "linkedIn": "https://www.linkedin.com/in/philiprsnyder",
+      "stackOverflow": "https://stackoverflow.com/users/2175988/prs",
+      "github": "https://github.com/psnyder",
+      "bitbucket": "https://bitbucket.org/philipsnyder"
+    }
+  },
+  "title": "Computer Scientist + Electronics Hobbyist + Artist = Your Unicorn",
+  "intro": "Gsnap joukuu mzinga bitly dropio sococo quora, boxbe grockit zoho tivo. Octopart chegg bebo ebay, joyent loopt hulu meebo, eskobo ning.  Nuvvo udemy zlio jumo, hojoki imeem. Spock mobly babblely yoono groupon jumo kiko, stypi bebo spock qeyno zlio. Wesabe balihoo grockit dopplr odeo imvu, elgg babblely jabber. Palantir scribd skype dopplr ebay bitly, zoodles whrrl glogster etsy boxbe whrrl, gooru airbnb kno orkut. Eskobo imeem chartly handango oooj, wakoopa handango. Bebo lala zapier, joukuu. spock. Wufoo vimeo flickr zimbra, waze.",
+  "skillGroups": {
+    "Software Development": {
+      "lvl": "Master",
+      "skills": [
+        "Full-Stack Development", "Web Development", "JavaScript", "Native Application Development",
+        "HTML", "CSS", "C++", "Python", "TDD", "Test Driven Development", "UX",
+        "User Experience", "Agile Methodologies", "Scrum", "SOA", "SaaS", "OOP"
+      ]
+    },
+    "Software Architecture": {
+      "lvl": "Advanced",
+      "skills": [
+        "REST API", "ORM", "Active Record", "Encryption", "PII", "Security",
+        "Network Design", "CI/CD", "AWS", "EC2", "S3", "RDS", "Linux", "Apache", "Nginx", "LAMP", "MEAN"
+      ]
+    },
+    "Embedded Systems": {
+      "lvl": "Intermediate",
+      "skills": [
+        "Espressif", "ESP32", "ESP8266", "Arduino", "Raspberry Pi", "ESP-IDF", "RTOS", "FreeRTOS", "I2C", "SPI", "C++", "Python"
+      ]
+    },
+    "JavaScript": {
+      "lvl": "Master",
+      "skills": [
+        "NodeJS", "Node", "ES5", "ES6", "ES7", "JQuery", "Angular", "React", "VanillaJS", "Sequelize", "Handlebars", "Mustache", "D3", "Express", "Socket.IO"
+      ]
+    },
+    "Database": {
+      "lvl": "Advanced",
+      "skills": [
+        "Schema Design", "MySQL", "PostgreSQL", "Oracle", "Sqlite", "Redis", "Mongo", "Replication", "Partitioning", "Relational", "Efficient Indexing"
+      ]
+    },
+    "PHP": {
+      "lvl": "Advanced",
+      "skills": [
+        "Armrest", "Cake", "Laravel", "Symphony", "Doctrine"
+      ]
+    }
+  },
+  "skills": [
+    { "text": "Software Development", "weight": 3 },
+    { "text": "Full-Stack Development", "weight": 4 },
+    { "text": "Web Development", "weight": 2 },
+    { "text": "JavaScript", "weight": 10 },
+    { "text": "Native Application Development", "weight": 3 },
+    { "text": "HTML", "weight": 4 },
+    { "text": "CSS", "weight": 4 },
+    { "text": "C++", "weight": 4 },
+    { "text": "Python", "weight": 5 },
+    { "text": "TDD", "weight": 6 },
+    { "text": "Test Driven Development", "weight": 6 },
+    { "text": "UX", "weight": 7 },
+    { "text": "User Experience", "weight": 8 },
+    { "text": "Agile Methodologies", "weight": 4 },
+    { "text": "Scrum", "weight": 3 },
+    { "text": "SOA", "weight": 3 },
+    { "text": "SaaS", "weight": 4 },
+    { "text": "OOP", "weight": 4 },
+    { "text": "Software Architecture", "weight": 9 },
+    { "text": "REST API", "weight": 8 },
+    { "text": "ORM", "weight": 6 },
+    { "text": "Active Record", "weight": 6 },
+    { "text": "Encryption", "weight": 2 },
+    { "text": "PII", "weight": 2 },
+    { "text": "Security", "weight": 4 },
+    { "text": "Network Design", "weight": 3 },
+    { "text": "CI/CD", "weight": 5 },
+    { "text": "AWS", "weight": 4 },
+    { "text": "EC2", "weight": 3 },
+    { "text": "S3", "weight": 3 },
+    { "text": "RDS", "weight": 4 },
+    { "text": "Linux", "weight": 4 },
+    { "text": "Apache", "weight": 2 },
+    { "text": "Nginx", "weight": 2 },
+    { "text": "LAMP", "weight": 3 },
+    { "text": "MEAN", "weight": 2 },
+    { "text": "Embedded Systems", "weight": 2 },
+    { "text": "Espressif", "weight": 2 },
+    { "text": "ESP32", "weight": 4 },
+    { "text": "ESP8266", "weight": 3 },
+    { "text": "Arduino", "weight": 2 },
+    { "text": "Raspberry Pi", "weight": 4 },
+    { "text": "ESP-IDF", "weight": 3 },
+    { "text": "RTOS", "weight": 2 },
+    { "text": "FreeRTOS", "weight": 2 },
+    { "text": "I2C", "weight": 3 },
+    { "text": "SPI", "weight": 3 },
+    { "text": "NodeJS", "weight": 7 },
+    { "text": "Node", "weight": 6 },
+    { "text": "ES5", "weight": 8 },
+    { "text": "ES6", "weight": 9 },
+    { "text": "ES7", "weight": 10 },
+    { "text": "JQuery", "weight": 7 },
+    { "text": "Angular", "weight": 6 },
+    { "text": "React", "weight": 8 },
+    { "text": "Vue", "weight": 5 },
+    { "text": "Vite", "weight": 3 },
+    { "text": "VanillaJS", "weight": 10 },
+    { "text": "Sequelize", "weight": 7 },
+    { "text": "Handlebars", "weight": 6 },
+    { "text": "Mustache", "weight": 5 },
+    { "text": "D3", "weight": 4 },
+    { "text": "Express", "weight": 5 },
+    { "text": "Socket.IO", "weight": 4 },
+    { "text": "Schema Design", "weight": 9 },
+    { "text": "MySQL", "weight": 10 },
+    { "text": "PostgreSQL", "weight": 9 },
+    { "text": "Oracle", "weight": 5 },
+    { "text": "Sqlite", "weight": 3 },
+    { "text": "Redis", "weight": 8 },
+    { "text": "Mongo", "weight": 7 },
+    { "text": "Replication", "weight": 5 },
+    { "text": "Partitioning", "weight": 4 },
+    { "text": "Relational", "weight": 6 },
+    { "text": "Efficient Indexing", "weight": 4 },
+    { "text": "PHP", "weight": 6 },
+    { "text": "Armrest", "weight": 5 },
+    { "text": "Cake", "weight": 5 },
+    { "text": "Laravel", "weight": 6 },
+    { "text": "Symphony", "weight": 4 },
+    { "text": "Doctrine", "weight": 5 }
+  ],
+  "experience": [
+    {
+      "employer": "UltiMaker",
+      "startDate": "2023-11-01",
+      "endDate": "2024-05-01",
+      "title": "Senior Software Engineer",
+      "bulletPoints": [
+        "Integration of CloudPrint software into UltiMaker's ecosystem",
+        "Created bridge between Makerbot's printer communication layer and UltiMaker's Digital Factory software. This allowed for Makerbot printers to be intregrated directly into UltiMaker's existing cloud services.",
+        "Worked with a team of 4 developers and 2 designers to create NeoPrep - a clean code base and redesign of CloudPrint. This codebase was designed such that an app could be distributed via download for whatever OS you have, or deployed to our services to support cloud based slicing, etc."
+      ]
+    },
+    {
+      "employer": "Makerbot",
+      "startDate": "2020-10-01",
+      "endDate": "2023-11-01",
+      "title": "Senior Software Engineer",
+      "bulletPoints": [
+        "Advanced spam filtering applied to all user generated content",
+        "File and content filtering to avoid abuse of s3 storage",
+        "Community driven moderation tool with various key triggers implemented",
+        "Recovery and damage assessment after data leak was discovered. Fast action taken to secure printers from attack.",
+        "Responsible for all printer connectivity and communication with cloud ecosystem",
+        "Implemented additional features such as print success tracking and print progress reporting",
+        "Designed highly efficient printer communication layer replacement over IoT. This service was capable of supporting an increase of camera polling from 2 minutes to 5 seconds without causing any performance degradation while using 25% of the previous resources consumed.",
+        "Used DataDog extensively to track performance and find areas that need optimization. Using DataDog allowed me to track all communication for any printer, across our entire cloud ecosystem. This lead to easily percieved improvements in printer performance and reduced operations."
+      ]
+    },
+    {
+      "employer": "Oportun",
+      "startDate": "2018-10-01",
+      "endDate": "2020-05-01",
+      "title": "Senior Software Engineer",
+      "bulletPoints": [
+        "Supported team with tools to simplify development and QA process, including deployment scripts and dashboards, a chrome plugin to quickly enter test data on forms, etc.",
+        "Worked with Oportun core IT and Security teams to ensure encryption of PII and safety of deployed systems.",
+        "Added support for internationalization to the client application, to serve Oportun's Spanish speaking customers.",
+        "Led India engineering team doing integration of Springboard platform with internal Oportun systems."
+      ]
+    },
+    {
+      "employer": "Springboard Auto",
+      "startDate": "2018-06-01",
+      "endDate": "2018-10-01",
+      "title": "Senior Software Engineer",
+      "bulletPoints": [
+        "Helped prepare Springboard Auto platform for acquisition, which became reality in October 2018!",
+        "This involved normal business operations requests, cataloging and reviewing all software in use by the stack, creating documentation and diagrams of those systems, as well as coming up with a proof of concept for migrating the entire platform from Rackspace to AWS (completed in 3 weeks)."
+      ]
+    },
+    {
+      "employer": "Springboard Auto",
+      "startDate": "2016-06-01",
+      "endDate": "2017-12-01",
+      "title": "Senior Software Engineer",
+      "bulletPoints": [
+        "Built auto lending SaaS solution integrating with financial institutions, credit reporting agencies, KBB, NADA, and other 3rd party services to determine the value of an applicant's requested loan and automatically approve or decline according to business defined rules. The system allows for loans between private parties, dealerships and refinancing as well, and was active in more than 24 states.",
+        "One of four main developers responsible for building the API layer in NodeJS using express, sequelize, postgres, mongodb, soap and other technologies. Mentored junior and mid level engineers and provided guidance and encouragement to help foster a more cohesive development team. Led small teams of peer developers to complete projects with accuracy and minimal development time.",
+        "Implemented a library to encrypt and gzip file streams for storage and retrieval of sensitive applicant documents on Amazon S3, as well as integration with private internal software.",
+        "Wrote code to handle payments via ECheck, ACH, or live checks sent out to dealerships, DMV offices, and private party sellers.",
+        "Built reporting codebase to generate CSV files and deliver them via email, sftp, HTTP post, etc to our partners that drive in traffic to the Springboard Auto site.",
+        "Created test data generator which creates a realistic and fully populated test application data set in 10 or less lines of code. If supplied with multiple values for any data points, the test case would be run for each combination of supplied values, as well as attempting invalid types, undefined, null, etc.",
+        "Maintained 95%+ code coverage and feature stability by using test driven development (TDD) while developing the API layer."
+      ]
+    },
+    {
+      "employer": "Restoration Media",
+      "startDate": "2015-08-01",
+      "endDate": "2016-05-01",
+      "title": "Senior Data Analyst",
+      "bulletPoints": [
+        "Data analysis to generate insight into user activity, allowing the team to send email campaigns to leads that are interested in the content and unlikely to report it as spam or junk mail. This gives the company a higher email reputation score and keeps their emails from ending up in the trash or spam folders.",
+        "Mapped key data points from a live feed of user interactions, processing over 25 million records a day.",
+        "Created UI for querying extremely large datasets with multiple complex queries, and returned the results via email. Used OpenNLP, a native language processing library, to create SQL queries from normal english language based on mapped database schema terms and sentence structure.",
+        "Built an enterprise level application able to scale using AWS services like EC2, EBS, Route53, IAM etc.",
+        "Deployed a replicated partitioned PostgreSQL server, which was queried via the API layer with both NodeJS / ExpressJS and PHP / Laravel for faster integration points with other developers. Designed schema to hold over 2 billion records and still allow for complex queries that return in less than 5 minutes.",
+        "Front end code development using AngularJS mostly, but also jQuery for various admin tools.",
+        "Handled complex tasks using message queues, producers and consumers - built on ActiveMQ and PHP.",
+        "Created a map that showed where user interactions were occurring in near real time using Google Maps."
+      ]
+    },
+    {
+      "employer": "Central Desktop",
+      "startDate": "2008-02-01",
+      "endDate": "2012-04-01",
+      "title": "Senior Software Engineer",
+      "bulletPoints": [
+        "Acted as lead developer on numerous projects including integration with multiple partner APIs.",
+        "Implemented an MVC framework with the ability to pass its model from PHP to JavaScript in the browser.",
+        "Migrated existing WYSIWYG editor to TinyMCE used on multiple subdomains and served over a CDN",
+        "Developed custom plugins and window manager to allow for site-wide themed inline windows fully replacing alert(), confirm() and prompt().",
+        "Created AJAX based lazy-loading tree widget used and repurposed in many different ways across the site.",
+        "Designed, implemented & managed build process for JavaScript and CSS minification, concatenation, and deployment.",
+        "Complete facelift of an aging web 1.0 style site to a highly dynamic, themeable, AJAX driven user experience.",
+        "Added WebDAV support for simplified file access and integrated with partner OffiSync to support concurrent editing and versioning of files directly from Office.",
+        "Implemented an OpenId based identity provider and consumer for federated identity across products."
+      ]
+    },
+    {
+      "employer": "NextWave Wireless",
+      "startDate": "2009-01-01",
+      "endDate": "2010-01-01",
+      "title": "Senior Applications Analyst",
+      "bulletPoints": [
+        "Implemented open source Single Sign On solution.",
+        "Built an administration website for synchronizing Cisco MeetingPlace users with Active Directory users.",
+        "Built various administrative tools for the IT department such as backup scripts & service monitors."
+      ]
+    },
+    {
+      "employer": "PriceGrabber",
+      "startDate": "2008-01-01",
+      "endDate": "2009-01-01",
+      "title": "Senior Software Engineer",
+      "bulletPoints": [
+        "Search Engine Optimization.",
+        "Redesigned the travel site to a completely interactive AJAX based site.",
+        "Built an OOP PHP library for interfacing with databases and objects.",
+        "Built a web based reporting tool for marketing.",
+        "Created a cross-browser JavaScript library for positioning, animation, effects and widget frameworks."
+      ]
+    },
+    {
+      "employer": "Gateway Computers",
+      "startDate": "2008-01-01",
+      "endDate": "2009-01-01",
+      "title": "Software Engineer",
+      "bulletPoints": [
+        "Created a dynamic tree view for conguring a computer for purchase in the online B2B portal.",
+        "Worked with a team of 8 developers to completely rewrite Gateway's online B2B portal using PHP5 and MySQL.",
+        "Designed and implemented the database architecture for use on the new B2B portal.",
+        "Created a database abstraction library to allow seamless changes between MySQL and Oracle.",
+        "Designed and implemented an OOP object mapping framework to enable maximum code reuse and minimize development time."
+      ]
+    },
+    {
+      "employer": "SQLFusion LLC",
+      "startDate": "2008-01-01",
+      "endDate": "2009-01-01",
+      "title": "MySQL DBA",
+      "bulletPoints": [
+        "Maintained excellent customer relationships while meeting project requirements on a deadline.",
+        "Managed and maintained multiple clients' MySQL databases.",
+        "Designed and implemented a 99.999% uptime database for a high profile government client using MySQL, replication, and memory based tables."
+      ]
+    },
+    {
+      "employer": "Vizional Technologies",
+      "startDate": "2000-09-01",
+      "endDate": "2002-06-01",
+      "title": "Web Developer",
+      "bulletPoints": [
+        "Designed and implemented reporting tools to enable better management of a client's warehouse space.",
+        "Designed and implemented a Java servlets based portal.",
+        "Implemented a skinnable interface for the portal using XML / XSL.",
+        "Created various web pages for tracking shipments in a supply chain."
+      ]
+    },
+    {
+      "employer": "Scour.com",
+      "startDate": "2000-04-01",
+      "endDate": "2000-09-01",
+      "title": "Web Developer",
+      "bulletPoints": [
+        "Worked with designers and a small team of web developers to create a portal for the online music sharing community.",
+        "Wrote WebDAV interface over PHP to give users online storage for their files."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Computer Science",
+      "schoolName": "Indiana University / Purdue University @ Indianapolis (IUPUI)",
+      "dateString": "1995 - 1997"
+    },
+    {
+      "degree": "Computer Science & Studio Art",
+      "schoolName": "Ball State University",
+      "dateString": "1997 - 2000"
+    }
+  ],
+  "interests": {
+
+  },
+  "references": {
+
+  }
+}

@@ -1,7 +1,9 @@
 <template>
   <div>
     <h1>Resume Generator</h1>
-    <form @submit.prevent="generateResume">
+    <form @submit.prevent="findKeywords()">
+      <input type="text" v-model="jobTitle" placeholder="Job Title" />
+      <input type="text" v-model="employerName" placeholder="Employer Name" />
       <textarea v-model="jobDescription" placeholder="Paste Job Description Here"></textarea>
       <textarea v-model="currentResume" placeholder="Paste Current Resume Here"></textarea>
       <button type="submit">Generate Resume</button>
@@ -13,12 +15,14 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import axios from 'axios';
 
 export default {
   data() {
     return {
+      employerName: '',
+      jobTitle: '',
       jobDescription: '',
       currentResume: '',
       generatedResume: null,
@@ -26,14 +30,18 @@ export default {
   },
   methods: {
     async generateResume() {
+    },
+    async findKeywords() {
       try {
-        const response = await axios.post('http://localhost:5000/api/generate-resume', {
+        const response = await axios.post('http://localhost:9000/api/find-keywords', {
+          employerName: this.employerName,
+          jobTitle: this.jobTitle,
           jobDescription: this.jobDescription,
-          currentResume: this.currentResume,
         });
-        this.generatedResume = response.data.choices[0].message.content;
+        console.log(response.data);
+        return response.data;
       } catch (error) {
-        console.error("Error generating resume:", error);
+        console.error("Error finding keywords:", error);
       }
     },
   },

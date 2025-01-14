@@ -21,11 +21,11 @@
           <div class="school-years">{{ item.dateString }}</div>
         </li>
       </ul>
-    </div>
-    <div class="about-resume">
-      <div class="qr-code"><IconQrCode /></div>
-      <div class="blurb">This resume was created using a custom-built application designed to showcase my expertise in software development. The app features responsive design, cross-platform compatibility, and a dynamic user interface. Explore the source code in this GitHub repository for an in-depth look at my skills and capabilities.</div>
-      <!-- <div class="blurb">This resume was generated via code I wrote to showcase my knowledge. I invite you to check out the source in the repository. It is a complete app, able to be built on any major platform, responsive design, and much more interesting than a simple resume.</div> -->
+      <div class="about-resume">
+        <div class="qr-code"><IconQrCode /></div>
+        <div class="blurb">This resume was created using a custom-built application designed to showcase my expertise in software development. The app features responsive design, cross-platform compatibility, and a dynamic user interface. Explore the source code in this GitHub repository for an in-depth look at my skills and capabilities.</div>
+        <!-- <div class="blurb">This resume was generated via code I wrote to showcase my knowledge. I invite you to check out the source in the repository. It is a complete app, able to be built on any major platform, responsive design, and much more interesting than a simple resume.</div> -->
+      </div>
     </div>
   </div>
 </template>
@@ -97,7 +97,6 @@ export default defineComponent({
 }
 .skill-groups {
   padding-inline-start: 0;
-  /* border: 1px solid black; */
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -111,7 +110,6 @@ export default defineComponent({
   border: 1px solid black;
   display: inline-block;
 }
-
 .skill-group-skills {
   padding-inline-start: 0;
   list-style-type: none;
@@ -146,14 +144,11 @@ export default defineComponent({
   background-color: red;
   position: absolute;
   top: 0;
-  right: 0;
+  right: 0; 
 }
 
 .section-title {
-  /* background-color: black;
-  color: white; */
   margin-top: 1.5rem;
-  border-top: 1px solid black;
   font-weight: bold;
   font-size: 1.25rem;
 }
@@ -169,6 +164,7 @@ export default defineComponent({
     font-size: .75rem;
     text-align: center;
     clear: both;
+    display: none;
     /* margin-top: 2em; */
   }
 }
@@ -181,7 +177,10 @@ export default defineComponent({
     display: none;
   }
   .content {
-    margin-top: 1.5em;
+    margin-top: 2.5em;
+  }
+  .avoid-page-break {
+    page-break-inside: avoid;
   }
 }
 </style>

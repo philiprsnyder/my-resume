@@ -14,7 +14,7 @@ defineProps<{
 </script>
 
 <template>
-  <li class="work-experience">
+  <li class="work-experience avoid-page-break">
     <div class="experience-header">
     <div class="dates">
       <CalendarIcon
@@ -75,6 +75,7 @@ li {
 .work-experience {
   margin-top: .5em;
 }
+
 .experience-header {
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,f1f1f1+50,e1e1e1+51,f6f6f6+100;White+Gloss+%231 */
   background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%);

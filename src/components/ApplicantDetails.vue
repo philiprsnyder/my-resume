@@ -74,7 +74,7 @@ defineProps<{
   .contact-info {
     position: absolute;
     top: 2em;
-    right: 3em;
+    right: 0em;
     margin-top: 0;
   }
   .contact-info li {
@@ -85,6 +85,7 @@ defineProps<{
   .contact-info li[type="github"],
   .contact-info li[type="bitbucket"] {
     float: left;
+    margin-right: 1.8em;
   }
 }
 

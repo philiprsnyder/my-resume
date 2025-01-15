@@ -1,25 +1,19 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 // import HelloWorld from './components/HelloWorld.vue'
-import ResumeGenerator from './components/ResumeGenerator.vue'
+// import ResumeGenerator from './components/ResumeGenerator.vue'
 </script>
 
 <template>
-  <header>
-    <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /> -->
-
+  <RouterView />
+  <footer>
     <div class="wrapper">
-      <!-- <HelloWorld msg="You did it!" /> -->
-      <ResumeGenerator />
-
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
       </nav>
     </div>
-  </header>
-
-  <RouterView />
+  </footer>
 </template>
 
 <style scoped>

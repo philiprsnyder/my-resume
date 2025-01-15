@@ -1,4 +1,12 @@
 # My Resume
+
+---
+
+1. Clone repo
+2. `npm install`
+3. `npm run dev`
+4. Browse to http://localhost:9030
+
 ---
 
 What is this?
@@ -24,3 +32,5 @@ Basic idea of what the API would do:
 7. once approved, submit the application, and set calendar notifications for me to follow up.
 
 If I can't get a job after all that, then its hopeless.
+
+If you've gotten this far, then you probably want to know whats going on with that generator folder. Thats where the api and frontend are. I've been doing some work on that train of thought now that I have a decent resume to start with.

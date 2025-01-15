@@ -23,7 +23,7 @@
       </ul>
       <div class="about-resume">
         <div class="qr-code"><IconQrCode /></div>
-        <div class="blurb">This resume was created using a custom-built application designed to showcase my expertise in software development. The app features responsive design, cross-platform compatibility, and a dynamic user interface. Explore the source code in this GitHub repository for an in-depth look at my skills and capabilities.</div>
+        <div class="blurb">This resume was created using a custom-built application designed to showcase my expertise in software development. The app features responsive design, cross-platform compatibility, and a dynamic user interface. Explore the source code in this GitHub repository for an in-depth look at my skills and capabilities. &copy; {{ (new Date(Date.now())).getFullYear() }}</div>
         <!-- <div class="blurb">This resume was generated via code I wrote to showcase my knowledge. I invite you to check out the source in the repository. It is a complete app, able to be built on any major platform, responsive design, and much more interesting than a simple resume.</div> -->
       </div>
     </div>
@@ -61,13 +61,21 @@ export default defineComponent({
   width: 100%;
 }
 .about-resume {
-  padding: 1em;
-  margin-top: 1em auto;
+  display: none;
 }
+@media print {
+  .about-resume {
+    display: block;
+    /* padding: 1em; */
+    margin-top: 10em;
+    margin-left: -1em;
+  }
+}
+
 .about-resume .blurb {
   padding-left: 1em;
   display: flex;
-  max-width: 20em;
+  max-width: 25em;
   position: relative;
 }
 .about-resume .qr-code {

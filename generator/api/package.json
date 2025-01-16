@@ -4,7 +4,7 @@
   "description": "Backend api for resume generator./",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npx cypress open",
     "start": "node --env-file=.env ./dist/server.js",
     "dev": "ts-node-dev --env-file=.env --ignore-watch=./data/* ./src/server.ts",
     "build": "tsc"

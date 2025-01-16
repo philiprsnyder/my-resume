@@ -1,11 +1,12 @@
-require('dotenv').config();
+import dotenv from 'dotenv';
+dotenv.config();
 
 import express, { Request, Response } from 'express';
 import axios from 'axios';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import fs from 'fs';
-import uuid from 'uuid';
+import {v4 as uuidv4} from 'uuid';
 
 const app = express();
 const PORT = process.env.PORT;
@@ -14,38 +15,18 @@ const PORT = process.env.PORT;
 app.use(cors());
 app.use(bodyParser.json());
 
-import JobInterface from './interfaces/job';
-import SkillInterface from './interfaces/skill';
-import ResumeInterface from './interfaces/resume';
-interface ResumeRequest {
-  resume: ResumeInterface;
-}
-interface GetSkillsetRequest {
-}
-interface SaveSkillsetRequest {
-  skillset: SkillInterface[];
-}
-interface GetJobRequest {
-  id: string;
-}
-interface SaveJobRequest {
-  employer: string;
-  title: string;
-  description: string;
-}
-interface SaveJobResponse {
-  job: JobInterface;
-}
-interface KeywordRequest {
-  jobDescription: string;
-  employerName: string;
-  jobTitle: string;
-}
-interface GenerateResumeRequest {
-  jobDescription: string;
-  currentResume: string;
-}
-
+import {
+  // Data interfaces
+  JobInterface,
+  SkillInterface,
+  ResumeInterface,
+  // Request interfaces
+  GetJobRequest,
+  GetKeywordRequest,
+  SaveResumeRequest,
+  SaveSkillsetRequest,
+  SaveJobRequest,
+} from './interfaces';
 
 const data = {
   skillset: require('../data/skillset.json'),
@@ -71,7 +52,6 @@ app.get('/api/skillset', (req: Request, res: Response<SkillInterface[]|string>) 
 app.post('/api/skillset', async (req: Request, res: Response<SkillInterface[]|String>) => {
   const { skillset } = req.body as SaveSkillsetRequest;
   try {
-    console.log('skillset: ', skillset);
     fs.writeFileSync('./data/skillset.json', JSON.stringify(skillset));
     data.skillset = skillset;
     res.json(data.skillset);
@@ -81,13 +61,17 @@ app.post('/api/skillset', async (req: Request, res: Response<SkillInterface[]|St
   }
 });
 
-app.get('/api/resume', (req: Request, res: Response) => {
-  res.json(data.resumeData);
+app.get('/api/resume', (req: Request, res: Response<ResumeInterface|String>) => {
+  try {
+    res.json(data.resumeData);
+  } catch (e) {
+    console.error(e);
+    res.status(500).send("Error fetching resume");
+  }
 });
 
 app.post('/api/resume', async (req: Request, res: Response<ResumeInterface|String>) => {
-  console.log('req.body: ', req.body);
-  const { resume } = req.body as ResumeRequest;
+  const { resume } = req.body as SaveResumeRequest;
   try {
     fs.writeFileSync('./data/resume.json', JSON.stringify(resume));
     data.resumeData = resume;
@@ -118,15 +102,16 @@ app.get('/api/job', async (req: Request, res: Response<JobInterface|String>) => 
 });
 
 app.post('/api/job', async (req: Request, res: Response<JobInterface|String>) => {
-  const { employer, title, description } = req.body as SaveJobRequest;
+  const { url, employer, title, description, keywords } = req.body as SaveJobRequest;
   try {
     const _j = {
-      id: uuid.v4(),
+      id: uuidv4(),
+      url,
       employer,
       title,
       description,
+      keywords,
     };
-    console.log('saving job: ', _j);
     data.jobs[_j.id] = _j;
     fs.writeFileSync('./data/jobs.json', JSON.stringify(data.jobs));
     res.json(_j);
@@ -136,9 +121,22 @@ app.post('/api/job', async (req: Request, res: Response<JobInterface|String>) =>
   }
 });
 
-app.post('/api/find-keywords', async (req: Request, res: Response) => {
-  const { jobDescription, employerName, jobTitle } = req.body as KeywordRequest;
+app.delete('/api/job/:id', async (req: Request, res: Response<JobInterface[]|String>) => {
   try {
+    const { id } = req.params;
+    delete data.jobs[id];
+    fs.writeFileSync('./data/jobs.json', JSON.stringify(data.jobs));
+    res.json(data.jobs);
+  } catch (e) {
+    console.error(e);
+    res.status(500).send("Error deleting job");
+  }
+});
+
+app.post('/api/find-keywords', async (req: Request, res: Response) => {
+  const { jobId } = req.body as GetKeywordRequest;
+  try {
+    const job = data.jobs[jobId];
     const response = await axios.post('https://api.openai.com/v1/chat/completions', {
       model: "gpt-4o-mini", // Use GPT-4 for better results
       messages: [
@@ -156,7 +154,7 @@ app.post('/api/find-keywords', async (req: Request, res: Response) => {
           "content": [
             {
               "type": "text",
-              "text": `Employer Name: ${employerName}\n\nJob Title: ${jobTitle}\n\nJob Description: ${jobDescription}`,
+              "text": `Employer Name: ${job.employer}\n\nJob Title: ${job.title}\n\nJob Description: ${job.description}`,
             },
           ],
         }
@@ -167,35 +165,40 @@ app.post('/api/find-keywords', async (req: Request, res: Response) => {
         'Content-Type': 'application/json',
       },
     });
-    res.json(response.data);
+    const keywords = response.data.choices[0].message.content.split('\n')
+      .map((line: string) => line.replace(/- /, ''))
+      .filter((line: string) => line.length > 0);
+    data.jobs[jobId].keywords = keywords;
+    fs.writeFileSync('./data/jobs.json', JSON.stringify(data.jobs));
+    res.json(keywords);
   } catch (error) {
     console.error(error);
     res.status(500).send("Error generating resume");
   }
 });
 
-app.post('/api/generate-resume', async (req: Request, res: Response) => {
-    const { jobDescription, currentResume } = req.body as GenerateResumeRequest;
-    try {
-        const response = await axios.post('https://api.openai.com/v1/chat/completions', {
-            model: "gpt-4", // Use GPT-4 for better results
-            messages: [
-                { role: "system", content: "You are an expert resume writer." },
-                { role: "user", content: `Generate a tailored resume for the following job description based on this resume: \n\nJob Description: ${jobDescription}\n\nCurrent Resume: ${currentResume}` }
-            ]
-        }, {
-            headers: {
-                'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
-                'Content-Type': 'application/json',
-            },
-        });
+// app.post('/api/generate-resume', async (req: Request, res: Response) => {
+//     const { jobDescription, currentResume } = req.body as GenerateResumeRequest;
+//     try {
+//         const response = await axios.post('https://api.openai.com/v1/chat/completions', {
+//             model: "gpt-4", // Use GPT-4 for better results
+//             messages: [
+//                 { role: "system", content: "You are an expert resume writer." },
+//                 { role: "user", content: `Generate a tailored resume for the following job description based on this resume: \n\nJob Description: ${jobDescription}\n\nCurrent Resume: ${currentResume}` }
+//             ]
+//         }, {
+//             headers: {
+//                 'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
+//                 'Content-Type': 'application/json',
+//             },
+//         });
 
-        res.json(response.data);
-    } catch (error) {
-        console.error(error);
-        res.status(500).send("Error generating resume");
-    }
-});
+//         res.json(response.data);
+//     } catch (error) {
+//         console.error(error);
+//         res.status(500).send("Error generating resume");
+//     }
+// });
 
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);

@@ -1,0 +1,16 @@
+<template>
+  <div class="about">
+    <h1>What is this?</h1>
+    <h1>Who are you?</h1>
+  </div>
+</template>
+
+<style>
+@media (min-width: 1024px) {
+  .about {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+}
+</style>
